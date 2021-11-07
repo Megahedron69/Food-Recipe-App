@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Recipe</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+    body {
+      background: #212121;
+      color: white;
+      font-family: "Nunito", sans-serif;
+    }
+    h1 {
+      font-size: 8rem;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover,
+    a:active {
+      color: black;
+    }
+    .searcharea {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    input {
+      margin-top: 2%;
+      width: 50%;
+      border: solid 6px;
+      border-color: #a4508b;
+      background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+      box-sizing: content-box;
+      border-radius: 80px;
+      font-size: 1.5rem;
+      padding: 1rem;
+      background: white;
+      color: black;
+      font-weight: 800;
+    }
+    input:hover,
+    input:active {
+      outline: 3px solid #a4508b;
+    }
+    .searcharea svg {
+      cursor: pointer;
+      background-color: white;
+      position: relative;
+      right: 72px;
+      top: 12px;
+      transition: all 240ms;
+    }
+    .searcharea svg:hover {
+      scale: 1.101;
+    }
+    .searchresults {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 9%;
+    }
+    .searchres {
+      background-color: #121212;
+      border-radius: 51px;
+      height: auto;
+      width: 400px;
+      margin: 3%;
+      margin-right: 2%;
+      overflow: hidden;
+      box-shadow: 4px 4px 16px black;
+      margin-bottom: 5%;
+      transition: all 300ms;
+    }
+    .searchres:hover {
+      scale: 1.01;
+    }
+    .searchres img {
+      width: 100%;
+      margin: 2%;
+      display: flex;
+      padding: 1%;
+      justify-content: center;
+      height: 300px;
+      border-top-left-radius: 51px;
+      border-top-right-radius: 51px;
+    }
+    .recipeinfo {
+      margin: 4%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .recipeinfo h3 {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .recipeinfo button {
+      width: 50%;
+      margin-left: 44%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border: none;
+      padding: 2%;
+      border-radius: 11px;
+      background-color: #673ab7;
+      transition: all 300ms;
+    }
+    .recipeinfo button:hover {
+      background-color: #58329d;
+      scale: 1.1;
+    }
+    .recipeinfo p {
+      font-size: 1.3rem;
+      margin: 5%;
+      margin-bottom: 0.9%;
+    }
+    @media (max-width: 548px) {
+      svg {
+        height: 32px;
+        width: 32px;
+      }
+      input {
+        font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 495px) {
+      input {
+        font-size: 1.1rem;
+      }
+    }
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 7rem;
+      }
+      svg {
+        margin-bottom: 9px;
+      }
+      input {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 395px) {
+      input {
+        font-size: 0.898rem;
+      }
+    }
+  </style>
+  <body>
+    <h1 class="heading">Recito</h1>
+    <div class="searcharea">
+      <input type="text" class="searchbox" placeholder="Search Your Recipe" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        style="fill: #000000"
+      >
+        <path
+          fill="#616161"
+          d="M34.6 28.1H38.6V45.1H34.6z"
+          transform="rotate(-45.001 36.586 36.587)"
+        ></path>
+        <path
+          fill="#616161"
+          d="M20 4A16 16 0 1 0 20 36A16 16 0 1 0 20 4Z"
+        ></path>
+        <path
+          fill="#37474F"
+          d="M36.2 32.1H40.2V44.400000000000006H36.2z"
+          transform="rotate(-45.001 38.24 38.24)"
+        ></path>
+        <path
+          fill="#64B5F6"
+          d="M20 7A13 13 0 1 0 20 33A13 13 0 1 0 20 7Z"
+        ></path>
+        <path
+          fill="#BBDEFB"
+          d="M26.9,14.2c-1.7-2-4.2-3.2-6.9-3.2s-5.2,1.2-6.9,3.2c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C16,13.9,17.9,13,20,13s4,0.9,5.4,2.5c0.2,0.2,0.5,0.4,0.8,0.4c0.2,0,0.5-0.1,0.6-0.2C27.2,15.3,27.2,14.6,26.9,14.2z"
+        ></path>
+      </svg>
+    </div>
+    <div class="searchresults" id="sear"></div>
+  </body>
+  <script src="app.js"></script>
+</html>
